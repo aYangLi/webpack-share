@@ -1,5 +1,5 @@
 const htmlWebpackPlugin = require("html-webpack-plugin"); //html插件，生成的文件插入到html中
-var _dirname = "";
+var path = require('path');
 module.exports = {
   // context:'',//整个运行环境的上下文默认为根目录
   entry:'./src/app.js', //第一种方试 
@@ -28,13 +28,23 @@ module.exports = {
       {
         test:/\.js$/,
         loader:'babel-loader',
-        exclude:__dirname +'/node_modules/',//排除哪些范围
+        // 利用node中的path 模块把路径解析为绝对路径
+        exclude:path.resolve(__dirname,'node_modules'),//排除哪些范围
         include:__dirname +'/src/',//包含哪些范围（babel-loader比较慢，配置这两项，加速转换）
         //参数
         query:{
           presets:['latest']
         }
+      },
+      {
+        test:/\.css$/,
+        loader:'style-loader!css-loader',//用感叹号串联loader 经过css-loader 处理完成css文件之后，style-loader会将它插入到html中
       }
     ]
   },
+  // postcss: [
+  //   require('autoprefixer')({
+  //     browsers:['last 5 versions']
+  //   })
+  // ],
 } 

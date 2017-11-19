@@ -1,0 +1,15 @@
+html,body{
+  padding: 0;
+  margin: 0;
+  background-color: yellow;
+}
+
+ul,li {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.flex-div{
+  display: flex;
+}
