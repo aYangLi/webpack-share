@@ -60,18 +60,18 @@
 /******/ 	__webpack_require__.p = "http://cdn.com/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */,
-/* 1 */
+/******/ ({
+
+/***/ 3:
 /***/ (function(module, exports) {
 
-function a() {
-    console.log(a);
-    
+function c() {
+    console.log('c');
 }
 
 /***/ })
-/******/ ]);
+
+/******/ });
