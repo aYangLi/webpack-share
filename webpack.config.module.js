@@ -39,6 +39,14 @@ module.exports = {
       {
         test:/\.css$/,
         loader:'style-loader!css-loader',//用感叹号串联loader 经过css-loader 处理完成css文件之后，style-loader会将它插入到html中
+      },
+      {
+        test:/\.html$/,
+        loader:'html-loader',//用感叹号串联loader 经过css-loader 处理完成css文件之后，style-loader会将它插入到html中
+      },
+      {
+        test:/\.less$/,
+        loader:'style-loader!css-loader!less-loader'
       }
     ]
   },
