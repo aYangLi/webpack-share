@@ -45,6 +45,18 @@ module.exports = {
         loader:'html-loader',//用感叹号串联loader 经过css-loader 处理完成css文件之后，style-loader会将它插入到html中
       },
       {
+        test:/\.ejs$/,
+        loader:'ejs-loader',//用感叹号串联loader 经过css-loader 处理完成css文件之后，style-loader会将它插入到html中
+      },
+      {
+        test:/\.(png|jpg|gif|svg)$/i,
+        loader:'file-loader',//用感叹号串联loader 经过css-loader 处理完成css文件之后，style-loader会将它插入到html中
+        // 给file-loader传参数
+        query:{
+          name:'dist/img/[name]-[hash:5].[ext]',//打包之后的存放位置
+        }
+      },
+      {
         test:/\.less$/,
         loader:'style-loader!css-loader!less-loader'
       }

@@ -531,12 +531,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 const App = function() {
   
-  let dom = document.getElementById('#app');
+  let dom = document.getElementById('app');
 
   let layer = new __WEBPACK_IMPORTED_MODULE_1__components_layer_layer_js__["a" /* default */]();
 
   console.log(layer);  
-  dom.innerHTML = layer.tpl;
+  // dom.innerHTML = layer.tpl; 
+  dom.innerHTML = layer.ejs({
+    name:'aYang',
+    arr:['apple','xiaomi','hoor']
+  })
 
 }
 
@@ -691,6 +695,9 @@ module.exports = function (css) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__layer_html__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__layer_less__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__layer_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__layer_less__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__layer_ejs__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__layer_ejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__layer_ejs__);
+
 
 
 
@@ -698,6 +705,7 @@ function layer (params) {
   return {
     name:'layer',
     tpl:__WEBPACK_IMPORTED_MODULE_0__layer_html___default.a,
+    ejs:__WEBPACK_IMPORTED_MODULE_2__layer_ejs___default.a,
   }
 }
 
@@ -749,10 +757,39 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, ".layer {\n  width: 600px;\n  height: 200px;\n  border-color: gray;\n}\n.layer > div {\n  width: 400px;\n  height: 100px;\n  background-color: red;\n}\n", ""]);
+exports.push([module.i, ".layer {\n  width: 600px;\n  height: 200px;\n  border-color: gray;\n}\n.layer > div {\n  width: 400px;\n  height: 100px;\n  background: url(" + __webpack_require__(10) + ") no-repeat;\n}\n", ""]);
 
 // exports
 
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "dist/img/aYang-7e3ae.png";
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+module.exports = function (obj) {
+obj || (obj = {});
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+with (obj) {
+__p += '<div class="layer">\r\n  <div>\r\n    this is A ' +
+((__t = ( name )) == null ? '' : __t) +
+' layer\r\n  </div>\r\n  ';
+for (var i= 0;i < arr.length; i++){;
+__p += '\r\n    ' +
+((__t = ( arr[i])) == null ? '' : __t) +
+'\r\n  ';
+};
+__p += '\r\n</div>';
+
+}
+return __p
+}
 
 /***/ })
 /******/ ]);
